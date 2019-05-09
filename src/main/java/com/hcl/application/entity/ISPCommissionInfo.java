@@ -7,18 +7,20 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="ISPCommissionInfo")
 public class ISPCommissionInfo implements Serializable {
 	private static final long serialVersionUID = 3748378277930880050L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private int id;
 
-	private Long productCode;
+	private Integer productCode;
 
-	private Long activityCode;
+	private Integer activityCode;
 
 	private String providerName;
 
@@ -32,30 +34,39 @@ public class ISPCommissionInfo implements Serializable {
 
 	private Date endDate;
 
-	public long getId() {
+	
+	
+	
+
+	public int getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
-	public Long getProductCode() {
+	public Integer getProductCode() {
 		return productCode;
 	}
 
-	public void setProductCode(Long productCode) {
+	public void setProductCode(Integer productCode) {
 		this.productCode = productCode;
 	}
 
-	public Long getActivityCode() {
+	public Integer getActivityCode() {
 		return activityCode;
 	}
 
-	public void setActivityCode(Long activityCode) {
+	public void setActivityCode(Integer activityCode) {
 		this.activityCode = activityCode;
 	}
 
+
+
+	
+
+	
 	public String getProviderName() {
 		return providerName;
 	}
