@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.hcl.application.dto.IngProviderResponse;
 import com.hcl.application.repository.IngAppCalculateCommissionRepository;
 import com.hcl.application.repository.IngAppProviderRepository;
 
@@ -18,9 +17,12 @@ public class IngAppServiceImpl implements IngAppService {
 	public IngAppCalculateCommissionRepository ingAppCalculateCommissionRepository;
 
 	@Override
-	public List<IngProviderResponse> fetchProvider(int provider) {
+	public List<?> getTransactionDetails(Long provider) {
 
-		List<IngProviderResponse> providerResponse = ingAppServiceRepository.fetch(provider);
+		List<?> providerResponse = ingAppServiceRepository.fetch(provider);
+
+//		List<IngTransactionResponse> ingTransactionResponses = (List<IngTransactionResponse>) providerResponse;
+
 		return providerResponse;
 	}
 
@@ -32,5 +34,8 @@ public class IngAppServiceImpl implements IngAppService {
 		// TODO Auto-generated method stub
 		return ingAppCalculateCommissionRepository.getActivityCode(productCode,activityCode);
 	}
+
+
+
 
 }

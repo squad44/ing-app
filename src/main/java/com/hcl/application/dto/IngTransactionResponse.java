@@ -1,14 +1,15 @@
 package com.hcl.application.dto;
 
-public class IngProviderResponse {
+public class IngTransactionResponse {
 
+	
 	private Long productCode;
 
-	private Long productId;
+	private Long productID;
 
 	private Long activityCode;
 
-	private String countOfActualStatus;
+	private Long countOfActualStatus;
 
 	public Long getProductCode() {
 		return productCode;
@@ -19,11 +20,11 @@ public class IngProviderResponse {
 	}
 
 	public Long getProductId() {
-		return productId;
+		return productID;
 	}
 
 	public void setProductId(Long productId) {
-		this.productId = productId;
+		this.productID = productId;
 	}
 
 	public Long getActivityCode() {
@@ -34,11 +35,11 @@ public class IngProviderResponse {
 		this.activityCode = activityCode;
 	}
 
-	public String getCountOfActualStatus() {
+	public Long getCountOfActualStatus() {
 		return countOfActualStatus;
 	}
 
-	public void setCountOfActualStatus(String countOfActualStatus) {
+	public void setCountOfActualStatus(Long countOfActualStatus) {
 		this.countOfActualStatus = countOfActualStatus;
 	}
 

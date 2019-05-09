@@ -1,4 +1,3 @@
-
 package com.hcl.application.controller;
 
 import java.util.List;
@@ -10,41 +9,36 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.hcl.application.dto.IngProviderResponse;
 import com.hcl.application.entity.ISPCommissionInfo;
-import com.hcl.application.service.IngAppService;
+import com.hcl.application.service.IngAppServiceImpl;
 
 @RestController
 @RequestMapping("/api")
 public class IngApplicationController {
 
 	@Autowired
-	IngAppService ingAppService;
+	IngAppServiceImpl ingAppService;
 
-	@GetMapping("/getProviderInfo/{partyId}")
-	public List<IngProviderResponse> fetchPending(@PathVariable("partyId") int partyId) {
+	@GetMapping("/getTransactionDetails/{partyId}")
+	public List<?> getTransactionDetails(@PathVariable("partyId") Long partyId) {
 
-		List<IngProviderResponse> response = null;
+		List<?> response = null;
 
-		response = ingAppService.fetchProvider(partyId);
+		response = ingAppService.getTransactionDetails(partyId);
 
 		return response;
 	}
+
 	@PostMapping("/api/calculateCommision/{productCode}/{activityCode}")
-	public List<?> calculateCommision(@PathVariable("productCode") Integer productCode,@PathVariable("activityCode") Integer activityCode){
-		
-		
+	public List<?> calculateCommision(
+			@PathVariable("productCode") Integer productCode,
+			@PathVariable("activityCode") Integer activityCode) {
+
 		List<ISPCommissionInfo> commission = null;
 
-		List<?> list =ingAppService.fetchCommission(productCode, activityCode);
-		System.out.println("list ====>>"+list);
-		System.out.println("list size====>>"+list.size());
+		List<?> list = ingAppService.fetchCommission(productCode, activityCode);
 		return list;
-		
-		
+
 	}
-	
-	
-	
-	
+
 }
