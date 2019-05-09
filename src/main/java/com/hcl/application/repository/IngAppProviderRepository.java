@@ -12,7 +12,7 @@ import com.hcl.application.entity.ISPTransactions;
 @Repository
 public interface IngAppProviderRepository extends JpaRepository<ISPTransactions, Long> {
 
-	@Query(value = "SELECT partyID,productCode,activityCode,count(status) as countOfActualStatus FROM ISPTransaction WHERE status = 1 and partyID = :provider GROUP BY partyID,productCode,activityCode", nativeQuery = true)
+	@Query(value = "SELECT partyID,productCode,activityCode,count(status) as countOfActualStatus FROM ISPTransaction WHERE status = 1 and partyID = :provider and partyID in (80145,80155,90125,90243,90692) GROUP BY partyID,productCode,activityCode", nativeQuery = true)
 	public List<?> fetch(@Param("provider") Long provider);
 
 }
