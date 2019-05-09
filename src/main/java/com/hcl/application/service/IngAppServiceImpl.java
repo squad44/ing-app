@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.hcl.application.dto.IngProviderResponse;
-import com.hcl.application.entity.ISPCommissionInfo;
 import com.hcl.application.repository.IngAppCalculateCommissionRepository;
 import com.hcl.application.repository.IngAppProviderRepository;
 
@@ -28,10 +27,10 @@ public class IngAppServiceImpl implements IngAppService {
 	
 
 	@Override
-	public List<ISPCommissionInfo> fetchCommission(Integer productCode,
+	public List<?> fetchCommission(Integer productCode,
 			Integer activityCode) {
 		// TODO Auto-generated method stub
-		return ingAppCalculateCommissionRepository.findByProductCodeAndActivityCode(productCode,activityCode);
+		return ingAppCalculateCommissionRepository.getActivityCode(productCode,activityCode);
 	}
 
 }

@@ -31,12 +31,15 @@ public class IngApplicationController {
 		return response;
 	}
 	@PostMapping("/api/calculateCommision/{productCode}/{activityCode}")
-	public List<ISPCommissionInfo> calculateCommision(@PathVariable("productCode") Integer productCode,@PathVariable("activityCode") Integer activityCode){
+	public List<?> calculateCommision(@PathVariable("productCode") Integer productCode,@PathVariable("activityCode") Integer activityCode){
 		
 		
 		List<ISPCommissionInfo> commission = null;
 
-		return commission = ingAppService.fetchCommission(productCode, activityCode);
+		List<?> list =ingAppService.fetchCommission(productCode, activityCode);
+		System.out.println("list ====>>"+list);
+		System.out.println("list size====>>"+list.size());
+		return list;
 		
 		
 	}

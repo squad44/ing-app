@@ -16,7 +16,7 @@ public class ISPCommissionInfo implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Integer Id;
 
 	private Integer productCode;
 
@@ -38,12 +38,14 @@ public class ISPCommissionInfo implements Serializable {
 	
 	
 
-	public int getId() {
-		return id;
+	
+
+	public Integer getId() {
+		return Id;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setId(Integer id) {
+		Id = id;
 	}
 
 	public Integer getProductCode() {
