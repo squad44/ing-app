@@ -58,6 +58,12 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	<distributionManagement>
+  <snapshotRepository>
+    <id>inghost</id>
+    <url>http://13.232.176.235:8081/nexus/content/repositories/inghost</url>
+  </snapshotRepository>
+</distributionManagement>
 	<build>
 		<plugins>
 			<plugin>
