@@ -61,7 +61,7 @@
 	<distributionManagement>
 		<snapshotRepository>
 			​
-			<id>inghost</id>
+			<id>nexus</id>
 			​
 			<url>http://13.232.176.235:8081/nexus/content/repositories/inghost</url>
 			​
