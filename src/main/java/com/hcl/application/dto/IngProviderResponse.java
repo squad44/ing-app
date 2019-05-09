@@ -8,8 +8,6 @@ public class IngProviderResponse {
 
 	private Long activityCode;
 
-	private String provider;
-
 	private String countOfActualStatus;
 
 	public Long getProductCode() {
@@ -34,14 +32,6 @@ public class IngProviderResponse {
 
 	public void setActivityCode(Long activityCode) {
 		this.activityCode = activityCode;
-	}
-
-	public String getProvider() {
-		return provider;
-	}
-
-	public void setProvider(String provider) {
-		this.provider = provider;
 	}
 
 	public String getCountOfActualStatus() {

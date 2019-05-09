@@ -19,14 +19,12 @@ public class IngApplicationController {
 	@Autowired
 	IngAppService ingAppService;
 
-	@GetMapping("/getProviderInfo/{provider}")
-	public List<IngProviderResponse> fetchPending(@PathVariable("provider") String provider) {
+	@GetMapping("/getProviderInfo/{partyId}")
+	public List<IngProviderResponse> fetchPending(@PathVariable("partyId") int partyId) {
 
 		List<IngProviderResponse> response = null;
 
-		if (provider != null) {
-		//	response = ingAppService.fetchProvider(provider);
-		}
+		response = ingAppService.fetchProvider(partyId);
 
 		return response;
 	}

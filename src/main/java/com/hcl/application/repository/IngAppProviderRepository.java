@@ -12,9 +12,8 @@ import com.hcl.application.entity.ISPTransactions;
 @Repository
 public interface IngAppProviderRepository extends JpaRepository<ISPTransactions, Long> {
 
-	@Query("SELECT provider,productId,productCode,activityCode,count(status) as countOfActualStatus " + "FROM Provider "
-			+ "WHERE status = 1 and provider = ?1" 
-		 + "GROUP BY (provider,productId,productCode,activityCode)")
-	public List<IngProviderResponse> fetch(String provider);
+	@Query("SELECT partyId,partyCode,activityCode,count(status) as countOfActualStatus " + "FROM ISPTransactions "
+			+ "WHERE status = 1 and provider = ?1" + "GROUP BY (productId,productCode,activityCode)")
+	public List<IngProviderResponse> fetch(int provider);
 
 }

@@ -6,6 +6,6 @@ import com.hcl.application.dto.IngProviderResponse;
 
 public interface IngAppService {
 	
-	public List<IngProviderResponse> fetchProvider(String provider);
+	public List<IngProviderResponse> fetchProvider(int provider);
 	
 }

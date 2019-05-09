@@ -15,7 +15,7 @@ public class IngAppServiceImpl implements IngAppService {
 	IngAppProviderRepository ingAppServiceRepository;
 
 	@Override
-	public List<IngProviderResponse> fetchProvider(String provider) {
+	public List<IngProviderResponse> fetchProvider(int provider) {
 
 		List<IngProviderResponse> providerResponse = ingAppServiceRepository.fetch(provider);
 		return providerResponse;
