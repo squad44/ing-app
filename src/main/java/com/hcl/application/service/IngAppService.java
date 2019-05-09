@@ -2,10 +2,10 @@ package com.hcl.application.service;
 
 import java.util.List;
 
-import com.hcl.application.dto.IngProviderResponse;
+import com.hcl.application.dto.IngTransactionResponse;
 
 public interface IngAppService {
 	
-	public List<IngProviderResponse> fetchProvider(int provider);
+	public List<?> getTransactionDetails(Long provider);
 	
 }

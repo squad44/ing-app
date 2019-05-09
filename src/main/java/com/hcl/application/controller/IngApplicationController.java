@@ -9,22 +9,21 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.hcl.application.dto.IngProviderResponse;
-import com.hcl.application.service.IngAppService;
+import com.hcl.application.service.IngAppServiceImpl;
 
 @RestController
 @RequestMapping("/api")
 public class IngApplicationController {
 
 	@Autowired
-	IngAppService ingAppService;
+	IngAppServiceImpl ingAppService;
 
-	@GetMapping("/getProviderInfo/{partyId}")
-	public List<IngProviderResponse> fetchPending(@PathVariable("partyId") int partyId) {
+	@GetMapping("/getTransactionDetails/{partyId}")
+	public List<?> getTransactionDetails(@PathVariable("partyId") Long partyId) {
 
-		List<IngProviderResponse> response = null;
+		List<?> response = null;
 
-		response = ingAppService.fetchProvider(partyId);
+		response = ingAppService.getTransactionDetails(partyId);
 
 		return response;
 	}

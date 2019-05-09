@@ -11,7 +11,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "ISPTransactions")
+@Table(name = "ISPTransaction")
+//@NamedQuery(name="ISPTransactions.fetch" ,query="SELECT partyID,productCode,activityCode,count(status) as countOfActualStatus FROM ISPTransactions" 
+//		+" WHERE status = 1 and partyID = :provider GROUP BY (partyID,productCode,activityCode)")
 public class ISPTransactions implements Serializable {
 	private static final long serialVersionUID = 3748378277930880050L;
 

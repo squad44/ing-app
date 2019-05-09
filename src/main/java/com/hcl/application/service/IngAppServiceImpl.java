@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.hcl.application.dto.IngProviderResponse;
 import com.hcl.application.repository.IngAppProviderRepository;
 
 @Service
@@ -15,9 +14,12 @@ public class IngAppServiceImpl implements IngAppService {
 	IngAppProviderRepository ingAppServiceRepository;
 
 	@Override
-	public List<IngProviderResponse> fetchProvider(int provider) {
+	public List<?> getTransactionDetails(Long provider) {
 
-		List<IngProviderResponse> providerResponse = ingAppServiceRepository.fetch(provider);
+		List<?> providerResponse = ingAppServiceRepository.fetch(provider);
+
+//		List<IngTransactionResponse> ingTransactionResponses = (List<IngTransactionResponse>) providerResponse;
+
 		return providerResponse;
 	}
 

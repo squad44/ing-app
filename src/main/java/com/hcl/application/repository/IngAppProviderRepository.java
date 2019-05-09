@@ -4,16 +4,15 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.hcl.application.dto.IngProviderResponse;
 import com.hcl.application.entity.ISPTransactions;
 
 @Repository
 public interface IngAppProviderRepository extends JpaRepository<ISPTransactions, Long> {
 
-	@Query("SELECT partyId,partyCode,activityCode,count(status) as countOfActualStatus " + "FROM ISPTransactions "
-			+ "WHERE status = 1 and provider = ?1" + "GROUP BY (productId,productCode,activityCode)")
-	public List<IngProviderResponse> fetch(int provider);
+	@Query(value = "SELECT partyID,productCode,activityCode,count(status) as countOfActualStatus FROM ISPTransaction WHERE status = 1 and partyID = :provider GROUP BY partyID,productCode,activityCode", nativeQuery = true)
+	public List<?> fetch(@Param("provider") Long provider);
 
 }
