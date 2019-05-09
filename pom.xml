@@ -33,15 +33,34 @@
 		</dependency>
 	</dependencies>
 
+	<distributionManagement>
+
+  <snapshotRepository>
+
+    <id>inghost</id>
+
+    <url>http://13.232.176.235:8081/nexus/content/repositories/inghost</url>
+
+  </snapshotRepository>
+
+</distributionManagement
+
 	<build>
+
 		<plugins>
+
 			<plugin>
+
 				<groupId>org.springframework.boot</groupId>
+
 				<artifactId>spring-boot-maven-plugin</artifactId>
+
 			</plugin>
+
 		</plugins>
 
-		
-	              </build>
+	</build>
+
+
 
 </project>
